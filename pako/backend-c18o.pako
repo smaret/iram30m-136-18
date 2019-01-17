@@ -1,0 +1,14 @@
+! Set the backends to observe the C18O (2-1) and N2H+ (1-0) lines
+
+swtotal
+backend /clear
+
+! Use VESPA to observe the C18O (2-1) line with a 60 MHz bandwidth and
+! 6.6 kHz resolution. At this frequency 20 MHz and 6.6 kHz corresponds
+! to 30 km/s and 0.01 km/s, respectively.
+
+backend vespa  1  0.0066   60.0   0   E230   horiz  LI  /line C18O(2-1)  ! 50%
+backend vespa  2  0.0066   60.0   0   E230   verti  LI  /line C18O(2-1)  ! 50%
+
+backend fts /fine /default ! 50 kHz resolution i.e. 0.15 km/s
+
